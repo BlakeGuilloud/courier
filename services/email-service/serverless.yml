@@ -1,0 +1,15 @@
+
+service: email-service
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  send:
+    handler: handler.sendEmail
+    events:
+      - http:
+          path: email
+          method: post
+    
